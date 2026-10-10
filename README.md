@@ -130,7 +130,7 @@ Desktop, AI provider `mock`. Each row is a real Jenkins build.
 
 Also observed:
 
-- 171 automated tests passed: 122 unit, 27 repository integration, 22 end-to-end
+- 172 automated tests passed: 123 unit, 27 repository integration, 22 end-to-end
   against the running stack.
 - In every build, each cited evidence reference existed in the package Jenkins archived.
 - Review decisions recorded through the UI started no build and changed no file.

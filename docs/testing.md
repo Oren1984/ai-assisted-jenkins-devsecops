@@ -4,7 +4,7 @@ Three levels, kept separate. Only the third involves the real Jenkins.
 
 | Level | Where it runs | What it proves | Count | Result |
 |---|---|---|---|---|
-| Unit | `tests` container (no network) and again inside every Jenkins build | Application, analysis engine, grounding, LLM client logic, review API, CI helper scripts | 122 | passed |
+| Unit | `tests` container (no network) and again inside every Jenkins build | Application, analysis engine, grounding, LLM client logic, review API, CI helper scripts | 123 | passed |
 | Repository integration | Host, needs the `docker` CLI | Compose configuration, Jenkinsfile structure, no hardcoded secrets, configured boundaries | 27 | passed |
 | End-to-end | Host, against the running stack | Real Jenkins builds, real evidence, analysis, review, isolation | 22 | passed |
 

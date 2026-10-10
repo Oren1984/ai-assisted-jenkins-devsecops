@@ -117,10 +117,16 @@ class Store:
         return AuditEvent(**dict(row))
 
     def latest_reviews(self, build_id: str) -> dict[str, dict]:
-        """Most recent decision per recommendation. Earlier ones stay in the audit trail."""
+        """Most recent decision per recommendation of the current analysis.
+
+        Decisions made on an analysis that was later replaced do not carry over: the
+        recommendation ids may now mean something else. They stay in the audit trail.
+        """
         latest = {}
         for event in self.audit(build_id):
-            if event.event_type == "review_recorded":
+            if event.event_type == "analysis_recorded":
+                latest = {}
+            elif event.event_type == "review_recorded":
                 latest[event.recommendation_id] = event.model_dump()
         return latest
 

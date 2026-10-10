@@ -132,6 +132,17 @@ def test_changed_decision_keeps_the_earlier_one_in_the_audit_trail(client):
     assert decisions == ["accept", "reject"]
 
 
+def test_decisions_do_not_carry_over_to_a_replaced_analysis(client):
+    submit(client, samples.test_failure())
+    client.post(REVIEW_URL, json={"decision": "accept", "reviewer": "oren"})
+    submit(client, samples.security_finding())  # same build id, different recommendations
+    record = client.get(f"/api/analyses/{BUILD}").json()
+    assert record["analysis"]["failure_category"] == "security_finding"
+    assert record["reviews"] == {}
+    decisions = [e["decision"] for e in client.get("/api/audit").json() if e["decision"]]
+    assert decisions == ["accept"]  # the earlier decision is still on record
+
+
 @pytest.mark.parametrize("body", [
     {"decision": "approve-and-apply", "reviewer": "oren"},
     {"decision": "accept"},
