@@ -1,0 +1,7 @@
+# Default Gitleaks rules. Generated pipeline evidence is excluded from the scan.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Pipeline output written during the build"
+paths = ['''(^|/)evidence/''']

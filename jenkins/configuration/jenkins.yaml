@@ -1,0 +1,40 @@
+# Jenkins Configuration as Code: the whole controller setup, no manual dashboard steps.
+jenkins:
+  systemMessage: "Local POC. Jenkins executes. AI investigates. Humans decide."
+  # The controller runs no builds. All work happens on the isolated build agent.
+  numExecutors: 0
+  slaveAgentPort: -1
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "${JENKINS_ADMIN_ID}"
+          password: "${JENKINS_ADMIN_PASSWORD}"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  nodes:
+    - permanent:
+        name: "build-agent"
+        labelString: "build-agent"
+        remoteFS: "/home/jenkins/agent"
+        numExecutors: 1
+        mode: EXCLUSIVE
+        retentionStrategy: "always"
+        launcher:
+          inbound:
+            webSocket: true
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - string:
+              id: "ai-ingest-token"
+              scope: GLOBAL
+              description: "Lets the pipeline submit evidence to the AI analysis service"
+              secret: "${AI_INGEST_TOKEN}"
+
+unclassified:
+  location:
+    url: "http://localhost:8080/"

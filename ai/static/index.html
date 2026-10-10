@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Failure Analysis &amp; Human Review</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>AI-Assisted Jenkins DevSecOps</h1>
+      <p class="tagline">Jenkins executes. AI investigates. Humans decide.</p>
+    </div>
+    <div id="provider" class="provider"></div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Demo scenarios</h2>
+      <p class="hint">Latest analysed Jenkins build per scenario. Builds are started in Jenkins, never from this page.</p>
+      <div id="scenarios" class="scenarios"></div>
+    </section>
+
+    <div class="layout">
+      <aside class="panel builds">
+        <h2>Analysed builds</h2>
+        <ul id="builds"></ul>
+      </aside>
+      <div id="detail" class="detail">
+        <section class="panel empty">No analysed build yet. Run a pipeline in Jenkins.</section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <span id="stats"></span>
+    <span>Decision support only. This interface cannot run builds, change code or deploy.</span>
+  </footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>

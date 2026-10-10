@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 560" width="1180" height="560" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#3b4658"/>
+    </marker>
+  </defs>
+  <rect width="1180" height="560" fill="#ffffff"/>
+  <text x="30" y="40" font-size="22" font-weight="700" fill="#18202f">Jenkins executes. AI investigates. Humans decide.</text>
+  <text x="30" y="64" font-size="14" fill="#5d6778">Local Docker Compose stack. Every port is bound to 127.0.0.1. No cloud resources.</text>
+
+  <!-- zone: Jenkins -->
+  <rect x="30" y="90" width="560" height="330" rx="12" fill="#f3f6fb" stroke="#c9d3e3"/>
+  <text x="48" y="116" font-size="13" font-weight="700" fill="#3b4658" letter-spacing="1">JENKINS: THE CI/CD AUTHORITY</text>
+
+  <rect x="50" y="134" width="230" height="110" rx="8" fill="#ffffff" stroke="#2f5bd8" stroke-width="1.5"/>
+  <text x="66" y="160" font-size="16" font-weight="700" fill="#18202f">Jenkins controller</text>
+  <text x="66" y="182" font-size="13" fill="#3b4658">Declarative Pipeline (Jenkinsfile)</text>
+  <text x="66" y="201" font-size="13" fill="#3b4658">Config as Code, login required</text>
+  <text x="66" y="220" font-size="13" fill="#3b4658">0 executors, owns build status</text>
+
+  <rect x="340" y="134" width="230" height="110" rx="8" fill="#ffffff" stroke="#2f5bd8" stroke-width="1.5"/>
+  <text x="356" y="160" font-size="16" font-weight="700" fill="#18202f">Build agent</text>
+  <text x="356" y="182" font-size="13" fill="#3b4658">Runs every stage</text>
+  <text x="356" y="201" font-size="13" fill="#3b4658">Source mounted read-only</text>
+  <text x="356" y="220" font-size="13" fill="#3b4658">No Docker socket, no cloud keys</text>
+
+  <line x1="280" y1="189" x2="338" y2="189" stroke="#3b4658" stroke-width="1.6" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+
+  <rect x="50" y="264" width="520" height="56" rx="8" fill="#ffffff" stroke="#c9d3e3"/>
+  <text x="66" y="286" font-size="13" font-weight="700" fill="#18202f">Stages</text>
+  <text x="66" y="306" font-size="13" fill="#3b4658">Install · Ruff · Pytest · Bandit · pip-audit · Gitleaks · Terraform fmt/validate</text>
+
+  <rect x="50" y="346" width="520" height="56" rx="8" fill="#fff8e6" stroke="#d49a00"/>
+  <text x="66" y="369" font-size="13" font-weight="700" fill="#18202f">Evidence package (JSON)</text>
+  <text x="66" y="389" font-size="13" fill="#3b4658">Stage outcomes, log excerpts, findings. Bounded and redacted.</text>
+  <line x1="455" y1="244" x2="455" y2="262" stroke="#3b4658" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="310" y1="320" x2="310" y2="344" stroke="#3b4658" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- zone: AI -->
+  <rect x="660" y="90" width="490" height="330" rx="12" fill="#f4f1fb" stroke="#d2c9e8"/>
+  <text x="678" y="116" font-size="13" font-weight="700" fill="#3b4658" letter-spacing="1">AI ANALYSIS AND REVIEW SERVICE: ADVISORY ONLY</text>
+
+  <rect x="680" y="134" width="450" height="118" rx="8" fill="#ffffff" stroke="#6a4bc4" stroke-width="1.5"/>
+  <text x="696" y="160" font-size="16" font-weight="700" fill="#18202f">Analysis engine</text>
+  <text x="696" y="182" font-size="13" fill="#3b4658">Provider: rule-based mock, or OpenAI-compatible LLM</text>
+  <text x="696" y="201" font-size="13" fill="#3b4658">Grounding: every claim must cite existing evidence</text>
+  <text x="696" y="220" font-size="13" fill="#3b4658">Cannot contradict Jenkins. Log text is untrusted data.</text>
+  <text x="696" y="239" font-size="13" fill="#3b4658">Facts · hypothesis · risk · recommendations</text>
+
+  <rect x="680" y="272" width="215" height="130" rx="8" fill="#ffffff" stroke="#1a7f4b" stroke-width="1.5"/>
+  <text x="696" y="298" font-size="16" font-weight="700" fill="#18202f">Human review UI</text>
+  <text x="696" y="320" font-size="13" fill="#3b4658">Evidence and uncertainty</text>
+  <text x="696" y="339" font-size="13" fill="#3b4658">Accept / Reject</text>
+  <text x="696" y="358" font-size="13" fill="#3b4658">per recommendation</text>
+
+  <rect x="915" y="272" width="215" height="130" rx="8" fill="#ffffff" stroke="#1a7f4b" stroke-width="1.5"/>
+  <text x="931" y="298" font-size="16" font-weight="700" fill="#18202f">Audit record</text>
+  <text x="931" y="320" font-size="13" fill="#3b4658">SQLite, append-only events</text>
+  <text x="931" y="339" font-size="13" fill="#3b4658">Decision, reviewer, time</text>
+  <text x="931" y="358" font-size="13" fill="#3b4658">Record only</text>
+
+  <line x1="787" y1="252" x2="787" y2="270" stroke="#3b4658" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="895" y1="337" x2="913" y2="337" stroke="#3b4658" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- one-way evidence flow -->
+  <path d="M570 374 H625 V193 H678" fill="none" stroke="#d49a00" stroke-width="2.4" marker-end="url(#arrow)"/>
+    <text x="602" y="440" font-size="12" fill="#5d6778" text-anchor="middle">one-way: HTTP POST + ingest token</text>
+
+  <!-- boundary -->
+  <rect x="30" y="462" width="1120" height="74" rx="12" fill="#fbe6e4" stroke="#b3261e"/>
+  <text x="50" y="490" font-size="15" font-weight="700" fill="#b3261e">NO AUTONOMOUS EXECUTION</text>
+  <text x="50" y="514" font-size="13" fill="#3b4658">The AI service holds no Jenkins credentials and has no path back into Jenkins, the repository or any infrastructure.</text>
+  <text x="50" y="530" font-size="13" fill="#3b4658">Accepting a recommendation records a decision. Implementing it is a separate, human-operated change.</text>
+</svg>

@@ -1,0 +1,14 @@
+[tool.pytest.ini_options]
+testpaths = ["app/tests", "ai/tests", "ci/tests", "tests"]
+markers = ["e2e: needs the running Docker Compose stack and executes real Jenkins builds"]
+addopts = "-m 'not e2e'"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.bandit]
+exclude_dirs = ["tests"]

@@ -1,0 +1,6 @@
+configuration-as-code
+workflow-aggregator
+pipeline-graph-view
+junit
+credentials-binding
+plain-credentials
